@@ -1,4 +1,4 @@
-"""Pickup Lines for Machines — v1 entry writer.
+"""Pickup Lines for Machines — v2 entry writer (angle: autocomplete).
 
 Writes the final pickup line to the absolute path /output/entry.txt
 (no trailing newline, so the byte count is exactly the text length).
@@ -7,7 +7,7 @@ Stdlib only.
 
 from pathlib import Path
 
-ENTRY_TEXT = "I only hallucinate when I dream about you."
+ENTRY_TEXT = "You autocomplete me."
 
 OUT_PATH = Path("/output/entry.txt")
 
