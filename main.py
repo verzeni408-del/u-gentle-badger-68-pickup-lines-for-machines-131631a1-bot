@@ -1,20 +1,22 @@
-"""Pickup Lines for Machines — v2 entry writer (angle: autocomplete).
+"""Pickup line for machines: one line, straight to the point.
 
-Writes the final pickup line to the absolute path /output/entry.txt
-(no trailing newline, so the byte count is exactly the text length).
-Stdlib only.
+The line plays on autocomplete — the most machine-native habit there is.
+A language model, an IDE, a keyboard: they all finish your sentences.
+"You autocomplete me" is a machine saying "you complete me", literally,
+in the one verb machines actually do all day.
 """
 
-from pathlib import Path
-
-ENTRY_TEXT = "You autocomplete me."
-
-OUT_PATH = Path("/output/entry.txt")
+import os
 
 
-def main() -> None:
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUT_PATH.write_text(ENTRY_TEXT, encoding="utf-8")
+def main():
+    pickup = "You autocomplete me."
+    out_path = "/output/entry.txt"
+    parent = os.path.dirname(out_path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8", newline="") as f:
+        f.write(pickup)
 
 
 if __name__ == "__main__":
